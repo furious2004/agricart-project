@@ -87,6 +87,7 @@
 
 .nav a:hover {
     cursor: pointer;
+    color: #f5f5f5;
 }
 
 .search_bar {
@@ -165,56 +166,172 @@
     height: 200px; /* Adjust the height as needed */
     object-fit: cover; /* Ensures the image covers the entire area */
 }
-.carousel {
-    padding: 50px 20px;
-    height: 60vh; /* Set initial height, adjust as needed */
+.services{
+    background-color: #f2f2f2;
+    padding-bottom: 8%;
+}
+.container {
+    width: 100%;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    
+    box-sizing: border-box; /* Include padding in the element's total width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    border-radius: 15px;
     overflow: hidden;
-    background-color: #f5f5f5;
-    border-radius: 10px; /* Rounded corners */
-    position: relative; /* Ensure relative positioning for overlay */
 }
 
-.carousel-inner {
-    height: 100%; /* Ensure carousel items take full height of the carousel */
+.slide {
+    display: none;
+    position: relative;
+    height: 100%;
 }
 
-.carousel-item {
-    position: relative; /* Position for overlay */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-.carousel-item::before {
-    content: "";
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Black gradient overlay */
-    z-index: 1; /* Ensure overlay is above the image */
-    border-radius: 10px; /* Match the carousel border-radius */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    border-radius: 15px;
 }
 
-.carousel-item img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; /* Ensure the image covers the entire area */
-    object-position: center; /* Center the image */
+.text {
+    color: #f2f2f2;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Roboto", sans-serif;
 }
 
-.carousel-control-prev, .carousel-control-next {
-    top: 50%; /* Position buttons vertically centered */
-    transform: translateY(-50%); /* Adjust to perfectly center */
-    z-index: 2; /* Ensure buttons are above the overlay */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 1;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    /* You can customize the carousel control icons here if needed */
-    background-color: rgba(0, 0, 0, 0.5);
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-@media (max-width: 768px) {
-    .carousel {
-        height: 40vh; /* Adjust height for smaller screens */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+@media only screen and (max-width: 600px) {
+    .text {
+        font-size: 18px;
     }
 }
+.footer {
+    background-color: #8DA750;
+    color:#142C14;
+    padding: 35px 0;
+}
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #142C14;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-section ul li a:hover {
+    color: #f2f2f2;
+}
+
+.footer-section img {
+    max-width: 100%;
+}
+
+.footer .social-media ul li a i,
+.footer .navigation ul li a i {
+    margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
+}
+.icon{
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+}
+.footer_title_first{
+    color: #212529;
+}
+.footer_title_second{
+    color: #142C14;
+}
+.copyright{
+    text-align: center;
+}
