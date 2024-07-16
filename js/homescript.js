@@ -1,19 +1,10 @@
-let slideIndex = 0;
-showSlides(slideIndex);
-
-function showSlides(n) {
-    let slides = document.getElementsByClassName("slide");
-    if (n >= slides.length) { slideIndex = 0 }
-    if (n < 0) { slideIndex = slides.length - 1 }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex].style.display = "block";
-}
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Initial call to display the first slide
-showSlides(slideIndex);
+$(".my-slider").slick({
+    slidesToShow: 1,
+    infinite:true,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows:false,
+      // dots: false, Boolean
+     // arrows: false, Boolean
+   });
